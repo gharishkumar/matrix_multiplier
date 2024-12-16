@@ -1,28 +1,26 @@
 import cocotb
 from cocotb.triggers import Timer
-from cocotb.regression import TestFactory
+import numpy as np
 
 @cocotb.test()
 async def test_matrix_multiplier_16bit(dut):
-    # Define input matrices
-    A = [[1, 2], [3, 4]]
-    B = [[5, 6], [7, 8]]
+    # Define input matrices using numpy
+    A = np.array([[1, 2], [3, 4]], dtype=np.int16)
+    B = np.array([[5, 6], [7, 8]], dtype=np.int16)
 
     # Assign inputs to the DUT
     for i in range(2):
         for j in range(2):
-            dut.matA_in[i][j].value = A[i][j]
-            dut.matB_in[i][j].value = B[i][j]
+            dut.matA_in[i][j].value = int(A[i][j])
+            dut.matB_in[i][j].value = int(B[i][j])
 
     # Wait for some time to allow for multiplication to occur
     await Timer(10, units='ns')
 
+    # Compute the expected result using numpy
+    C_expected = np.dot(A, B)
+
     # Check the result
-    C_expected = [[19, 22], [43, 50]]
     for i in range(2):
         for j in range(2):
-            assert dut.result_out[i][j].value == C_expected[i][j], f"Expected {C_expected[i][j]}, got {dut.result_out[i][j].value}"
-
-# Create a TestFactory and register the test
-factory = TestFactory(test_matrix_multiplier_16bit)
-factory.generate_tests()
+            assert dut.result_out[i][j].value == int(C_expected[i][j]), f"Expected {int(C_expected[i][j])}, got {dut.result_out[i][j].value}"
