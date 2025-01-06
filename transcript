@@ -1,0 +1,31 @@
+# INFO cocotb: Running command: vlib matrix_multiplier_16bit
+# INFO cocotb: ** Warning: (vlib-34) Library already exists at "matrix_multiplier_16bit".
+# INFO cocotb: Errors: 0, Warnings: 1
+# INFO cocotb: Running command: vlog -mixedsvvh -incr -work matrix_multiplier_16bit +define+COCOTB_SIM -sv C:\\Users\\ghari\\Documents\\project\\matrix_multiplier\\design.sv
+# INFO cocotb: Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# INFO cocotb: Start time: 19:51:28 on Dec 30,2024
+# INFO cocotb: vlog -mixedsvvh -incr -work matrix_multiplier_16bit "+define+COCOTB_SIM" -sv C:\\Users\\ghari\\Documents\\project\\matrix_multiplier\\design.sv
+# INFO cocotb: ** Warning: C:\\Users\\ghari\\Documents\\project\\matrix_multiplier\\design.sv(2): (vlog-13314) Defaulting port 'matA_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# INFO cocotb: ** Warning: C:\\Users\\ghari\\Documents\\project\\matrix_multiplier\\design.sv(3): (vlog-13314) Defaulting port 'matB_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# INFO cocotb: -- Compiling module matrix_multiplier_16bit
+# INFO cocotb: 
+# INFO cocotb: Top level modules:
+# INFO cocotb: 	matrix_multiplier_16bit
+# INFO cocotb: End time: 19:51:28 on Dec 30,2024, Elapsed time: 0:00:00
+# INFO cocotb: Errors: 0, Warnings: 2
+# INFO cocotb: Running command: vsim -c -onfinish exit -pli C:/Users/ghari/AppData/Local/Programs/Python/Python312/Lib/site-packages/cocotb/libs/cocotbvpi_modelsim.dll matrix_multiplier_16bit.matrix_multiplier_16bit -do run -all; quit
+# INFO cocotb: Reading pref.tcl
+# INFO cocotb: 
+# INFO cocotb: # 2023.3
+# INFO cocotb: 
+# INFO cocotb: # vsim -c -onfinish exit -pli "C:/Users/ghari/AppData/Local/Programs/Python/Python312/Lib/site-packages/cocotb/libs/cocotbvpi_modelsim.dll" matrix_multiplier_16bit.matrix_multiplier_16bit -do "run -all; quit"
+# INFO cocotb: # Start time: 19:51:31 on Dec 30,2024
+# INFO cocotb: # ** Note: (vsim-8009) Loading existing optimized design _opt
+# INFO cocotb: # ** License Issue: License request for intelqsimstarter feature failed
+# INFO cocotb: # ** License Issue: Invalid (inconsistent) license key. (C:\ProgramData\MentorGraphics\License\license.dat)
+# INFO cocotb: # ** Error: Failure to obtain a Verilog simulation license. Unable to checkout 'intelqsimstarter' license.
+# INFO cocotb: # Error loading design
+# ERROR cocotb: Error loading design
+# INFO cocotb: # End time: 19:51:33 on Dec 30,2024, Elapsed time: 0:00:02
+# INFO cocotb: # Errors: 0, Warnings: 0
+# Process vsim terminated with error 12
