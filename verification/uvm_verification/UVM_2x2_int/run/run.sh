@@ -1,0 +1,1 @@
+qverilog ../top/top_module.sv +incdir+../agent +incdir+../env +incdir+../test +incdir+../rtl -y ../rtl
